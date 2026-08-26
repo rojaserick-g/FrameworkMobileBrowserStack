@@ -1,0 +1,67 @@
+# Ejemplo de configuración de BrowserStack
+# Copia este archivo a browserstack.properties y completa con tus credenciales
+# 
+# IMPORTANTE: 
+# - No comitees browserstack.properties
+# - Está en .gitignore para proteger tus credenciales
+# - Cada desarrollador debe generar su propio archivo
+
+# ============================================
+# CREDENCIALES (Obligatorios)
+# ============================================
+browserstack.username=YOUR_BROWSERSTACK_USERNAME
+browserstack.access_key=YOUR_BROWSERSTACK_ACCESS_KEY
+
+# ============================================
+# CONFIGURACIÓN DEL NAVEGADOR
+# ============================================
+browserstack.browser.name=Chrome
+browserstack.browser.version=latest
+
+# ============================================
+# CONFIGURACIÓN DEL SISTEMA OPERATIVO
+# ============================================
+browserstack.os.name=Windows
+browserstack.os.version=11
+
+# ============================================
+# CONFIGURACIÓN MÓVIL
+# ============================================
+browserstack.mobile.android.device.name=Samsung Galaxy S24
+browserstack.mobile.android.os.version=14.0
+browserstack.mobile.android.browser.name=Chrome
+browserstack.mobile.ios.device.name=iPhone 15
+browserstack.mobile.ios.os.version=17.0
+browserstack.mobile.ios.browser.name=Safari
+
+# ============================================
+# CONFIGURACIÓN DEL PROYECTO
+# ============================================
+browserstack.project.name=simpleTestAutomation
+browserstack.build.name=Test Build
+browserstack.session.name=Test Session
+
+# ============================================
+# OPCIONES AVANZADAS
+# ============================================
+browserstack.local=false
+browserstack.accept.ssl.certs=true
+browserstack.debug=false
+browserstack.network.logs=false
+
+# ============================================
+# PARA COMPLETAR:
+# 
+# 1. Obtén tus credenciales en:
+#    https://www.browserstack.com/accounts/settings
+#
+# 2. Copia los valores de "Username" y "Access Key"
+#
+# 3. Reemplaza:
+#    - YOUR_BROWSERSTACK_USERNAME = Tu username
+#    - YOUR_BROWSERSTACK_ACCESS_KEY = Tu access key
+#
+# 4. (Opcional) Personaliza navegador, SO, y nombre del proyecto
+#
+# 5. Guarda como browserstack.properties
+# ============================================
