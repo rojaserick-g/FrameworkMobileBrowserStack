@@ -1,0 +1,82 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+dependencies {
+    // JUnit Platform
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Selenium
+    implementation 'org.seleniumhq.selenium:selenium-java:4.30.0'
+
+    // Cucumber
+    testImplementation 'io.cucumber:cucumber-java:7.14.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.14.0'
+
+    // JUnit 4 (necesario para @RunWith)
+    testImplementation 'junit:junit:4.13.2'
+
+    // IA
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+}
+
+test {
+    useJUnit()
+}
+
+task browserStackTest(type: Test) {
+
+    useJUnit()
+
+    // Ejecuta únicamente el Runner de BrowserStack
+    include '**/Runner/BrowserStackRunner.class'
+
+    // Fuerza el uso de BrowserStack
+    systemProperty "nav", "BrowserStack"
+
+    // Siempre vuelve a ejecutar la tarea
+    outputs.upToDateWhen { false }
+
+    description = 'Ejecuta únicamente BrowserStackRunner'
+    group = 'verification'
+}
+
+task browserStackAndroidTest(type: Test) {
+
+    useJUnit()
+
+    include '**/Runner/BrowserStackAndroidTest.class'
+
+    outputs.upToDateWhen { false }
+
+    description = 'Ejecuta únicamente BrowserStackAndroidTest'
+    group = 'verification'
+}
+
+task browserStackIOSTest(type: Test) {
+
+    useJUnit()
+
+    include '**/Runner/BrowserStackIOSTest.class'
+
+    outputs.upToDateWhen { false }
+
+    description = 'Ejecuta únicamente BrowserStackIOSTest'
+    group = 'verification'
+}
