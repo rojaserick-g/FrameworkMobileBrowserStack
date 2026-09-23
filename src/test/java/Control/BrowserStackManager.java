@@ -55,7 +55,7 @@ public class BrowserStackManager {
 
         Map<String, Object> bstackOptions = createCommonBstackOptions();
         bstackOptions.put("osVersion", osVersion);
-        bstackOptions.put("osName", osName);
+        bstackOptions.put("platformName", osName);
 
         // Asignar capabilities
         options.setCapability("bstack:options", bstackOptions);
