@@ -4,7 +4,7 @@ Feature: Pruebas móviles de BrowserStack
   Scenario: Abrir Example Domain en Android
     Given El navegador móvil se conecta a BrowserStack en "Android" con la URL "https://www.audiomusica.com/"
     Then La sesión móvil debe ejecutarse en "Android"
-    And La página móvil debe mostrar el título "Audiomusica - Tienda de instrumentos musicales y accesorios"
+    And La página móvil debe mostrar el título "Tienda Online - Audiomusica"
 
   @browserstack @mobile @ios
   Scenario: Abrir Example Domain en iOS
