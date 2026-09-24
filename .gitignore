@@ -1,3 +1,7 @@
 
 # Gradle local cache
 .gradle/
+
+# Generated test/build artifacts
+build/
+target/
